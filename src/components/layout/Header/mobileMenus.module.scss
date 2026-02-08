@@ -1,0 +1,132 @@
+/* =====================
+   MobileMenus
+========================*/
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+   .mobile_menu {
+      flex: 1;
+      /* 남는 공간 전부 차지 */
+      overflow-y: auto;
+      /* ✅ 여기서만 스크롤 발생 */
+      padding-bottom: 10px;
+      /* 살짝 여백 */
+   }
+
+   .mobile_menu_item {
+      border-bottom: 1px solid #e7e7e7;
+      padding: 5px;
+      height: 100%;
+      padding: 15px 10px;
+      position: relative;
+      font-weight: 500;
+
+      a {
+         display: block;
+         width: 100%;
+      }
+   }
+
+   .more_img {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 10px;
+   }
+
+   .menu_label {
+      display: inline-block;
+      vertical-align: middle;
+   }
+
+   .mobile_sub_menu {
+      background: #f9f9f9;
+      /*display: none;transition: all 0.3s ease;*/
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-5px);
+      transition: all 0.35s ease-in-out;
+
+      &.active {
+         max-height: 500px;
+         opacity: 1;
+         transform: translateY(0);
+      }
+
+      >li>a {
+         display: block;
+         text-indent: 2px;
+         padding: 10px 12px;
+         border-bottom: 1px solid #eee
+      }
+   }
+
+}
+
+
+/* =====================
+   Mobile  
+========================*/
+
+@media (max-width: 767px) {
+
+
+   .mobile_menu {
+      flex: 1;
+      /* 남는 공간 전부 차지 */
+      overflow-y: auto;
+      /* ✅ 여기서만 스크롤 발생 */
+      padding-bottom: 10px;
+      /* 살짝 여백 */
+   }
+
+   .mobile_menu_item {
+      border-bottom: 1px solid #e7e7e7;
+      padding: 5px;
+      height: 100%;
+      padding: 15px 10px;
+      position: relative;
+      font-weight: 500;
+
+      a {
+         display: block;
+         width: 100%;
+      }
+   }
+
+   .more_img {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 10px;
+   }
+
+   .menu_label {
+      display: inline-block;
+      vertical-align: middle;
+   }
+
+   .mobile_sub_menu {
+      background: #f9f9f9;
+      /*display: none;transition: all 0.3s ease;*/
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-5px);
+      transition: all 0.35s ease-in-out;
+
+      &.active {
+         max-height: 500px;
+         opacity: 1;
+         transform: translateY(0);
+      }
+
+      >li>a {
+         display: block;
+         text-indent: 2px;
+         padding: 10px 12px;
+         border-bottom: 1px solid #eee;
+      }
+   }
+}

@@ -1,0 +1,362 @@
+/* =====================
+   Header
+========================*/
+
+.pc_header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9000;
+  width: 100%;
+  height: 120px;
+  background: #fff;
+  border-bottom: 1px solid #b5b5b5;
+  transition: all 0.6s;
+}
+
+.mainHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9000;
+  width: 100%;
+  height: 120px;
+  background: rgba(0, 0, 0, .3);
+  border-bottom: 1px solid #b5b5b5;
+  transition: all 0.6s;
+}
+
+.subHeader {
+  //  background: white;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* on !!!*/
+.main-header.on {
+  background: #fff;
+}
+
+.pc_header1.on2 {
+  background: #fff;
+}
+
+
+.header_in {
+  .logo {
+    width: 180px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    img {
+      vertical-align: middle;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  >a {
+    display: inline-block;
+    line-height: 60px;
+  }
+}
+
+.pc_header_nav {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pc_btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+
+  span {
+    display: inline-block;
+    position: Absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 2px;
+    background: #1d1d1b;
+    transition: all 0.4s;
+
+    &.b {
+      top: 30%;
+    }
+
+    &.t {
+      /* 기본 top: 50% */
+    }
+
+    &.n {
+      top: 70%;
+    }
+
+  }
+
+  // 활성화 상태 (.on)
+  &.on {
+    span {
+      top: 50%;
+      left: 20%; // 기존 코드의 transform과 충돌 방지를 위해 확인 필요
+
+      &.b {
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      &.t {
+        display: none;
+      }
+
+      &.n {
+        transform: translateY(-50%) rotate(-45deg);
+      }
+    }
+  }
+}
+
+/* 모바일 display:none */
+.mobile_btn {
+  display: none;
+}
+
+.mobile_open {
+  display: none
+}
+
+
+/* =====================
+   Tablet  
+========================*/
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+
+  .pc_header {
+    height: 80px
+  }
+
+  .mainHeader {
+    background: #fff;
+    height: 80px;
+  }
+
+  .header_in {
+    position: relative;
+    width: 96%;
+    margin: 0 auto;
+    padding: 10px;
+
+    .pc_header_nav {
+      display: none;
+    }
+
+  }
+
+  .logo {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .mobile_btn {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: relative;
+
+    span {
+      display: inline-block;
+      position: Absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 25px;
+      height: 2px;
+      background: #000;
+      transition: all 0.4s;
+
+      &.b {
+        top: 30%
+      }
+
+      &.t {
+        /* 기본 */
+      }
+
+      &.n {
+        top: 70%;
+      }
+    }
+
+    &.on {
+      span {
+        top: 50%;
+        left: 20%;
+        transform: translateY(-50%);
+      }
+
+      .b {
+        transform: rotate(45deg);
+      }
+
+      .t {
+        display: none;
+      }
+
+      .n {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .mobile_open {
+
+    display: block;
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    /*left:0*/
+    width: 100%;
+    height: calc(100vh - 80px);
+    /* 화면 전체 높이 - 헤더 높이 */
+    background: #fff;
+    z-index: 1000;
+    transition: left 0.4s ease-in-out;
+
+    &.active {
+      left: 0;
+    }
+  }
+
+  .open_in {
+    position: relative;
+    width: 94%;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid #e7e7e7;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+
+}
+
+/* =====================
+   Mobile  
+========================*/
+
+@media (max-width: 767px) {
+
+  .header_in {
+    position: relative;
+    width: 96%;
+    margin: 0 auto;
+    padding: 10px;
+
+    .pc_header_nav {
+      display: none;
+    }
+  }
+
+  .logo {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .mobile_btn {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: relative;
+
+    span {
+      display: inline-block;
+      position: Absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 25px;
+      height: 2px;
+      background: #000;
+      transition: all 0.4s;
+
+      &.b {
+        top: 30%;
+      }
+
+      &.t {}
+
+      &.n {
+        top: 70%;
+      }
+    }
+
+    &.on {
+      span {
+        top: 50%;
+        left: 20%;
+        transform: translateY(-50%);
+      }
+
+      .b {
+        transform: rotate(45deg);
+      }
+
+      .t {
+        display: none;
+      }
+
+      .n {
+        transform: rotate(-45deg);
+      }
+    }
+
+  }
+
+
+  .mobile_open {
+    display: block;
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    /* 화면 전체 높이 - 헤더 높이 */
+    background: #fff;
+    z-index: 1000;
+    transition: left 0.4s ease-in-out;
+
+    &.active {
+      left: 0;
+    }
+  }
+
+  .open_in {
+    position: relative;
+    width: 94%;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid #e7e7e7;
+
+    display: flex;
+    flex-direction: column;
+
+  }
+
+}

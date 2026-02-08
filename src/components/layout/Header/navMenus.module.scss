@@ -1,0 +1,70 @@
+/* =====================
+   NavMenus
+========================*/
+
+
+
+.pc_menu {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: Center;
+  margin-left: 110px;
+
+  > li {
+    position: relative;
+    width: 13.5%;
+
+    a {
+      display: block;
+      font-size: 18px;
+      font-weight: 600;
+      width: 100%;
+      line-height: 40px;
+      padding-bottom: 20px;
+      color: #fff;
+    }
+
+  }
+
+  &.on {
+    li a {
+      color: #000
+    }
+  }
+}
+
+.pc_sub_menu {
+  display: none;
+  width: 100%;
+  position: Absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  border-radius: 10px;
+  background: var(--main-color);
+  padding: 20px 0;
+
+  &.active {
+    display: block !important;
+  }
+
+  li {
+    a {
+      display: block;
+      color: #fff;
+      padding: 10px 0;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .pc_menu{display: none;}
+
+}

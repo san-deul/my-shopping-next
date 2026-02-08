@@ -1,0 +1,200 @@
+/* =====================
+  PrdList
+========================*/
+
+//homearea 버튼 부분
+.mainMore {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: var(--main-color);
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+// 공통 상품 카드
+.itemImg {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #eee;
+  height: 0;
+  /* 높이를 0으로 설정 */
+  padding-bottom: 100%;
+
+  >a img {
+    position: absolute;
+    /* 이미지를 절대 위치로 설정하여 부모 요소의 padding-bottom에 영향을 받지 않도록 합니다. */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.itemTxt {
+  padding: 10px 5px;
+  text-align: center;
+  margin-left: 2px;
+}
+
+.iTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #181818;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+
+  a {
+    display: block;
+    padding: 20px 0 10px;
+    font-size: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.iPrice {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.iPrice1 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #b4b4b4;
+  text-decoration: line-through;
+}
+
+.iPrice2 {
+  margin-left: 16px;
+
+  span {
+    font-size: 20px;
+    color: #1e1e1e;
+    font-weight: 700;
+  }
+}
+
+
+.sectionLists {
+  width: 100%;
+  max-width: 1280px;
+  margin: 80px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  position: relative;
+}
+
+
+.list {
+  width: 23.5%;
+  margin-bottom: 74px;
+  position: relative;
+  background: #fff;
+}
+
+
+
+
+/* =====================
+   Tablet  
+========================*/
+@media (min-width: 768px) and (max-width: 1023px) {
+
+
+  .sectionLists {
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    justify-content: flex-start
+  }
+
+  .list {
+    width: calc((100% - (2% * 3)) / 4);
+    margin-bottom: 74px;
+    position: relative;
+    background: #fff;
+  }
+
+  .list:nth-child(n + 5) {
+    display: none;
+  }
+
+  .iTitle {
+    a {
+      font-size: 1rem
+    }
+  }
+
+  .iPrice1 {
+    font-size: .933rem
+  }
+
+  .iPrice2 {
+    span {
+      font-size: .933rem
+    }
+  }
+}
+
+
+
+
+/* =====================
+   Mobile  
+========================*/
+@media (max-width: 767px) {
+
+  .sectionLists {
+    justify-content: space-between;
+  }
+
+  .list {
+    width: 47.5%;
+    margin-bottom: 74px;
+    position: relative;
+    background: #fff;
+  }
+
+  .list:nth-child(n + 5) {
+    display: none;
+  }
+
+  .iTitle {
+    a {
+      font-size: 1rem
+    }
+  }
+
+  .iPrice1 {
+    font-size: 0.875rem
+  }
+
+  .iPrice2 {
+    span {
+      font-size: 0.875rem
+    }
+  }
+
+
+}

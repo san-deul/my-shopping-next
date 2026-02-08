@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --main-font: 'Pretendard', sans-serif;
+  /* 폰트 변수 */
+
+  --main-color: #ffaf8b;
+  --main-hover: #f77f48;
+  ;
+}
+
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--main-font);
+}
+
+.section {
+  width: 100%;
+  max-width: 1280px;
+  height: auto;
+  margin: 115px auto 0;
+  text-align: center;
+  position: relative;
+}
+
+.section_in {
+  width: 98%;
+  margin: 60px auto 0;
+  position: Relative;
+  text-align: center;
+}
+
+.title {
+  display: inline-block;
+  margin: 0 auto;
+  font-family: var(--mainfont);
+  font-size: 32px;
+  font-weight: 500;
+  position: relative;
+  line-height: 1;
+}
+
+.title::after {
+  content: '';
+  position: Absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 2px;
+  background: var(--main-color);
+}
+
+
+
+
+/* =====================
+   Tablet  
+========================*/
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section {
+    max-width: 100%;
+  }
+
+  .section_in {
+    width: 96%
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+}
+
+
+/* =====================
+   Mobile  
+========================*/
+@media (max-width: 767px) {
+  .content-area {
+    width: 96%
+  }
+
+  .section_in {
+    width: 96%
+  }
+
+  .title {
+    font-size: 2.143rem;
+  }
+
+}
