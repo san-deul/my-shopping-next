@@ -1,5 +1,6 @@
 import { productService } from "@/api/services/productService";
 import { reviewService } from "@/api/services/reviewService";
+import HomeLists from "@/components/layout/HomeLists";
 import PrdList from "@/components/ProductList/PrdList";
 import ReviewSlider from "@/components/ProductList/ReviewSlider";
 import Visual from "@/components/visual/Visual";
@@ -14,46 +15,44 @@ export const metadata: Metadata = {
   keywords: ["쇼핑몰", "화장품"],
 };
 
-// 2. async 함수인 서버 컴포넌트 타입 (Next.js는 기본적으로 JSX.Element를 반환하는 함수로 인식)
+
+/*
+ 서버에서 데이터 프리페칭을 통해 미리 데이터를 받아서 
+ 클라이언트 컴포넌트로 넘김.. (로딩..) 같은 것이 뜨지 않게끔.
+
+*/
+
+
+
 export default async function HomePage() {
-  const queryClient = getQueryClient();
+  const qc = getQueryClient();
 
   // 제품 데이터 프리페칭
-  await queryClient.prefetchQuery({
+  await qc.prefetchQuery({
     queryKey: ["products", "all"],
     queryFn: () => productService.getProductList(), // 화살표 함수 형태로 명시 권장
   });
 
   // 리뷰 데이터 프리페칭
-  await queryClient.prefetchQuery({
+  await qc.prefetchQuery({
     queryKey: ["reviews", "all"],
     queryFn: () => reviewService.getReviewList(),
   });
 
+
+  /*
+   ✔️1. 서버에서 이미 데이터를 받아서 Reqct Query 캐시에 넣어둠 
+  */
+
   return (
-    // dehydrate 결과값을 HydrationBoundary에 전달
-    <HydrationBoundary state={dehydrate(queryClient)}>
+    //✔️ 2. 캐시를 클라이언트로 전달 
+    <HydrationBoundary state={dehydrate(qc)}>  
       <main>
         <Visual />
-        {/* PrdList 컴포넌트가 PrdListProps 인터페이스를 가지고 있으므로 타입 체크가 작동합니다. */}
-        <PrdList 
-          title="Best Seller" 
-          type="best" 
-          showMore={true} 
-          moreLink="/shop/best" 
-        />
-        <PrdList 
-          title="New Item" 
-          type="new" 
-          showMore={true} 
-          moreLink="/shop/new" 
-        />
-        <ReviewSlider 
-          title="Review" 
-          showMore={true} 
-          moreLink="/review" 
-        />
+        <HomeLists />
       </main>
     </HydrationBoundary>
   );
 }
+
+

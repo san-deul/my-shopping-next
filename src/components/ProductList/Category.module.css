@@ -1,0 +1,45 @@
+.categoryList {
+  font-size: 0;
+  text-align: center;
+  width: 100%;
+  margin: 0px auto 0;
+  margin-bottom: 0px;
+ 
+
+  div {
+    display: inline-block;
+    width: auto;
+    padding: 0 20px;
+    font-size: 15px;
+    margin-bottom: 5px;
+
+    a {
+      display: inline-block;
+      height: 30px;
+      color: #111;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+      
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 4px;
+        transform: translateX(-50%);
+        width: 0%;
+        height: 2px;
+        background: var(--main-color);
+        
+      }
+
+      &.active::after {
+        width: 100%;
+        
+      }
+
+
+    }
+  }
+}

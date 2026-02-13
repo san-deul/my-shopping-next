@@ -14,23 +14,23 @@ import { useAllReviews } from "@/hooks/useReviewQuery";
 import noimage from "@/assets/images/noimage.jpg"; 
 import moreBtn from "@/assets/images/plus_btn.png";
 import styles from "./reviewSlider.module.scss";
+import { ReviewWithProfile } from "@/types/schema";
 
 // 1. Props 타입 정의
 interface ReviewSliderProps {
   title: string;
+  reviews: ReviewWithProfile[]
   showMore?: boolean;
   moreLink?: string;
 }
 
 export default function ReviewSlider({ 
-  title, 
+  title,
+  reviews, 
   showMore = false, 
   moreLink = "#" 
 }: ReviewSliderProps) {
   
-  // useAllReviews 훅에서 반환하는 데이터는 ReviewWithProfile[] 타입입니다.
-  const { data: reviews = [] } = useAllReviews();
-
   // 2. 아이디 마스킹 함수 타입 지정
   const maskId = (id: string | null): string => {
     if (!id) return "****";

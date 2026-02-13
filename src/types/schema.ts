@@ -9,8 +9,8 @@ export interface Product {
   discount: number | null;
   image: string | null;
   description: string | null;
-  isNew: boolean | null;
-  isBest: boolean | null;
+  isNew: boolean ;
+  isBest: boolean ;
   rating: number | null; // numeric(2, 1)은 소수점이 있는 number
   reviewCount: number | null;
   stock: number | null;
@@ -33,4 +33,12 @@ export interface ReviewWithProfile extends Review {
     display_name: string | null;
     avatar_url: string | null;
   } | null;
+}
+
+
+export interface Category {
+  id:number;
+  name: string;
+  parent_id: number | null;
+  
 }

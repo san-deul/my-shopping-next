@@ -14,10 +14,12 @@ export default function AllMenus({ menus }: AllMenusProps) {
   // 2. Zustand 스토어에서 상태 추출 (이미 store에서 타입이 정의됨)
   const isAllMenuOpen = useHeaderStore((state) => state.isAllMenuOpen);
 
+  console.log('isAllMenuOpen--->',isAllMenuOpen)
+
   if (!isAllMenuOpen) return null;
 
   return (
-    <div className={styles.pc_allmenu}>
+    <div className={`${styles.pc_allmenu} `}>
       <div className={styles.pc_allmenu_in}>
         <ul>
           {menus.map((menu) => (

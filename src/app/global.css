@@ -22,7 +22,6 @@ body {
 
 .section {
   width: 100%;
-  max-width: 1280px;
   height: auto;
   margin: 115px auto 0;
   text-align: center;
@@ -31,9 +30,11 @@ body {
 
 .section_in {
   width: 98%;
+  max-width: 1280px;
   margin: 60px auto 0;
   position: Relative;
   text-align: center;
+
 }
 
 .title {
@@ -55,6 +56,56 @@ body {
   width: 30%;
   height: 2px;
   background: var(--main-color);
+}
+
+
+/* 서브페이지 */
+.subpage-content {
+    /* fixed Header의 높이(200px)만큼 padding-top을 추가합니다. */
+    padding-top: 80px;
+    padding-bottom:50px;
+
+}
+
+
+
+/*
+Pagination
+*/
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  gap: 8px;
+}
+
+
+.pagination {
+  button {
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: #f2f2f2;
+    }
+
+    &.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &.active {
+      background: var(--main-color);
+      color: #fff;
+      border-color: var(--main-color);
+    }
+  }
 }
 
 
