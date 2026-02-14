@@ -1,7 +1,6 @@
-"use client";
 
-import { usePathname } from "next/navigation";
-
+import styles from "./SubTitle.module.css";
+/*
 const titleMap = {
   "/": null,
   "/login": "로그인",
@@ -9,15 +8,15 @@ const titleMap = {
   "/mypage": "마이페이지",
   "/order": "주문내역",
 };
-
-export default function SubTitle() {
-  const pathname = usePathname();
-  const title = titleMap[pathname];
+*/
+export default function SubTitle({title}:{title?: string}) {
+  //const pathname = usePathname();
+  //const title = titleMap[pathname];
 
   if (!title) return null;
 
   return (
-    <div className="sub-title-area">
+    <div className={styles.subTitleArea}>
       <h4 className="sub-title">{title}</h4>
     </div>
   );

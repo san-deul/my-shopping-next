@@ -61,10 +61,11 @@ body {
 
 /* 서브페이지 */
 .subpage-content {
-    /* fixed Header의 높이(200px)만큼 padding-top을 추가합니다. */
-    padding-top: 80px;
-    padding-bottom:50px;
+  /* fixed Header의 높이(200px)만큼 padding-top을 추가합니다. */
+  padding-top: 80px;
+  padding-bottom: 50px;
 
+  margin-top: 110px;
 }
 
 
@@ -110,6 +111,19 @@ Pagination
 
 
 
+/* 상세페이지*/
+.productDetail {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 60px 15px;
+  max-width: 900px;
+  margin: 0 auto;
+
+}
+
+
 
 /* =====================
    Tablet  
@@ -125,6 +139,13 @@ Pagination
 
   .title {
     font-size: 2rem;
+  }
+
+  /* 서브페이지.. 상세피이지*/
+  .productDetail {
+    flex-direction: column;
+    font-size: 1rem;
+    background: skyblue;
   }
 
 }
@@ -144,6 +165,12 @@ Pagination
 
   .title {
     font-size: 2.143rem;
+  }
+
+
+  .productDetail {
+    flex-direction: column;
+    font-size: 1rem;
   }
 
 }

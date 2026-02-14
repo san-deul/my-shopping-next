@@ -1,0 +1,190 @@
+/* ------------------
+ProductImgViewer 
+----------------------*/
+.productDetailLeft {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+
+.mainImage {
+  img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #eee;
+  }
+}
+
+/* ------------------
+ProductInfoBox 
+----------------------*/
+
+.productDetailRight {
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.productName {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: left;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #000;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.tag.new {
+  background-color: #000;
+}
+
+.tag.best {
+  background-color: #555;
+}
+
+.desc {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.priceBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.salePrice {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.originalPrice {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+/* 
+  ProductActionArea
+*/
+
+.quantitySection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  ;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.quantityBtns {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    font-size: 16px;
+  }
+}
+
+.quantityTotal {
+  margin-top: 16px;
+}
+
+
+.totalPrice {
+  margin-top: 5px;
+}
+
+.total {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.buttonsArea {
+  display: flex;
+  gap: 10px;
+
+  button {
+    flex: 1;
+    padding: 15px 0;
+    border: 1px solid #eee;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+
+    &:hover {
+      background-color: var(--main-hover);
+    }
+  }
+
+}
+
+
+
+
+/* =====================
+   Tablet  
+========================*/
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .productDetail {
+    flex-direction: column;
+    font-size: 1rem;
+    background:skyblue;
+  }
+
+  .productDetailRight {
+    width: 100%;
+  }
+
+  .quantitySection {
+    align-items: flex-start
+  }
+}
+
+
+
+/* =====================
+   Mobile  
+========================*/
+@media (max-width: 767px) {
+  .productDetailLeft {
+    width: 100%;
+    flex-direction: column;
+    background:skyblue;
+  }
+
+  .productDetailRight {
+    width: 100%;
+  }
+
+  .quantitySection {
+    align-items: flex-start
+  }
+
+}

@@ -3,7 +3,7 @@ import { supabase } from "@/lib/supabase";
 import type { Category, Product } from "@/types/schema";
 
 export const productService = {
-  
+
   async getCategoryList(): Promise<Category[]> {
     const { data, error } = await supabase.from("category").select("*");
     if (error) throw error;
@@ -28,4 +28,33 @@ export const productService = {
       // isNew: Boolean(p.isNew),
     }));
   },
+
+  async getProductById(id: number | string): Promise<Product> {
+    const numericId = typeof id === 'string' ? Number(id) : id;
+
+    if (isNaN(numericId)) {
+      console.error("Invalid ID passed to getProductById:", id);
+      return null;
+    }
+
+
+    const { data, error } = await supabase
+      .from("products")
+      .select("*")
+      .eq("id", id) // 딱 필요한 것만 필터링!
+      .single();
+
+    if (error){
+      console.error("Error fetching product by ID:", error.message);
+      return null;
+    }
+    return {
+      ...data,
+      id: Number(data.id),
+      category: data.category == null ? null : Number(data.category),
+    };
+  },
+
+
+
 };

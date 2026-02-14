@@ -1,0 +1,25 @@
+.subTitleArea {
+  text-align: center;
+  margin-top: 65px;
+
+  h4 {
+    display: inline-block;
+    font-size: 32px;
+    font-weight: 500;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: Absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 42%;
+      height: 2px;
+      background: var(--main-color);
+    }
+  }
+
+}
+
+.subTitleArea .subTitleArea h4::after {}
