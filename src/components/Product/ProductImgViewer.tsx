@@ -8,18 +8,19 @@ import Image from "next/image";
 import { Product } from "@/types/schema";
 
 
-interface ProductImgViewerProps {
-  product: Product;
-}
+type ProductImgViewerProps = {
+  name: string;
+  image: string;
+  // images?: string[];
+};
 
-
-export default async function ProductImgViewer({ product }: ProductImgViewerProps) {
+export default async function ProductImgViewer({ name, image }: ProductImgViewerProps) {
 
   return (
     <div className={styles.productDetailLeft}>
 
       <div className={styles.mainImage}>
-        <Image src={product.image} alt={product.name} width={400} height={400} />
+        <Image src={image} alt={name} width={400} height={400} />
       </div>
     </div>
   );

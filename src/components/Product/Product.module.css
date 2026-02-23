@@ -152,11 +152,7 @@ ProductInfoBox
 
 @media (min-width: 768px) and (max-width: 1023px) {
 
-  .productDetail {
-    flex-direction: column;
-    font-size: 1rem;
-    background:skyblue;
-  }
+
 
   .productDetailRight {
     width: 100%;
@@ -176,7 +172,7 @@ ProductInfoBox
   .productDetailLeft {
     width: 100%;
     flex-direction: column;
-    background:skyblue;
+
   }
 
   .productDetailRight {

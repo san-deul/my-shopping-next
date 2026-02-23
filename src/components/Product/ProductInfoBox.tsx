@@ -1,18 +1,20 @@
-import React from "react";
-import QuantitySelector from "./ProductActionArea";
-import { productService } from "@/api/services/productService";
 
 import styles from "./Product.module.css";
-import { Product } from "@/types/schema";
 import ProductActionArea from "./ProductActionArea";
 
-interface ProductInfoBoxProps {
-  product: Product;
-}
+type ProductInfoBoxProps = {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  originalPrice: number | null;
+  isNew: boolean;
+  isBest: boolean;
+};
 
 
 export default async function ProductInfoBox({
-  product
+  id, name, description, price, originalPrice, isNew, isBest
 }: ProductInfoBoxProps) {
 
 
@@ -23,25 +25,25 @@ export default async function ProductInfoBox({
     <div className={styles.productDetailRight}>
 
       <div className={styles.tags}>
-        {product.isNew && <span className={`${styles.tag} ${styles.new}`}>NEW</span>}
-        {product.isBest && <span className={`${styles.tag} ${styles.best}`}>BEST</span>}
+        {isNew && <span className={`${styles.tag} ${styles.new}`}>NEW</span>}
+        {isBest && <span className={`${styles.tag} ${styles.best}`}>BEST</span>}
       </div>
-      <h2 className={styles.productName}>{product.name}</h2>
+      <h2 className={styles.productName}>{name}</h2>
 
       
 
-      <p className={styles.desc}>{product.description}</p>
+      <p className={styles.desc}>{description}</p>
 
       <div className={styles.priceBox}>
-        <p className={styles.salePrice}>{product.price.toLocaleString()}원</p>
-        {product.originalPrice && (
+        <p className={styles.salePrice}>{price.toLocaleString()}원</p>
+        {originalPrice && (
           <p className={styles.originalPrice}>
-            {product.originalPrice.toLocaleString()}원
+            {originalPrice.toLocaleString()}원
           </p>
         )}
       </div>
 
-      <ProductActionArea product={product} />
+      <ProductActionArea productId={id} price={price} />
       
     </div>
   );
