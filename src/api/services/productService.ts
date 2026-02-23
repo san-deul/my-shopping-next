@@ -23,28 +23,24 @@ export const productService = {
       ...p,
       id: Number(p.id),
       category: p.category == null ? null : Number(p.category),
-      // isBest/isNew가 null일 수 있으니 아래에서 boolean 처리할 수도 있음(선택)
-      // isBest: Boolean(p.isBest),
-      // isNew: Boolean(p.isNew),
+
     }));
   },
 
-  async getProductById(id: number | string): Promise<Product> {
+  async getProductById(id: number | string): Promise<Product | null> {
     const numericId = typeof id === 'string' ? Number(id) : id;
 
     if (isNaN(numericId)) {
       console.error("Invalid ID passed to getProductById:", id);
       return null;
     }
-
-
     const { data, error } = await supabase
       .from("products")
       .select("*")
-      .eq("id", id) // 딱 필요한 것만 필터링!
+      .eq("id", numericId)
       .single();
 
-    if (error){
+    if (error) {
       console.error("Error fetching product by ID:", error.message);
       return null;
     }
@@ -53,6 +49,23 @@ export const productService = {
       id: Number(data.id),
       category: data.category == null ? null : Number(data.category),
     };
+  },
+
+  async getProductsByIds(ids: number[]): Promise<Product[]> {
+    if (ids.length === 0) return [];
+
+    const { data, error } = await supabase
+      .from("products")
+      .select("*")
+      .in("id", ids);
+
+    if (error) throw error;
+
+    return (data ?? []).map((p: any) => ({
+      ...p,
+      id: Number(p.id),
+      category: p.category == null ? null : Number(p.category),
+    }));
   },
 
 
