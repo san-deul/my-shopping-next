@@ -1,0 +1,72 @@
+.mypageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid #f3f3f3;
+  padding-bottom: 25px;
+  margin-top:60px;
+  margin-bottom: 40px;
+}
+
+.mypageInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mypageProfile p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: #666;
+}
+.mypageProfile p:first-child{
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color:#000
+}
+
+
+
+/* -------------------------------
+   하단 메뉴 목록 (MyPageMenu)
+--------------------------------*/
+.mypageMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mypageMenu li {
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+}
+
+.mypageMenu li:hover {
+  background: #fafafa;
+  border-color: #dcdcdc;
+}
+
+.mypageMenu a {
+  display: block;
+  padding: 16px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* 이모지 정렬 */
+.mypageMenu a::before {
+  content: "• ";
+  color: transparent;
+  margin-right: 4px;
+}
+
+.mypageMenu a:hover {
+  color: #000;
+}

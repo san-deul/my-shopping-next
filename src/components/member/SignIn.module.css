@@ -1,0 +1,102 @@
+
+.loginContainer {
+  max-width: 380px;
+  margin: 80px auto;
+  text-align: center;
+  font-family: "Pretendard", sans-serif;
+}
+
+.loginTitle {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.loginTitle::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #d9b1a3;
+  margin: 10px auto 0;
+}
+
+.tabWrap {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.tabBtn {
+  flex: 1;
+  padding: 10px 0;
+  background: #fafafa;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+  transition: all 0.2s;
+}
+
+.tabBtnActive {
+  background: #fff;
+  border-bottom: 2px solid #000;
+  font-weight: 600;
+}
+
+.inputWrap {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.inputWrap input {
+  width: 100%;
+  padding: 12px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+}
+
+.inputWrap input.inputError {
+  border-color: #ff5a5a;
+}
+
+.errorMsg {
+  color: #ff5a5a;
+  font-size: 12px;
+  text-align: left;
+  margin-top: 4px;
+  padding-left: 2px;
+}
+
+.loginBtn {
+  width: 100%;
+  background: var(--main-color);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 12px 0;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 4px;
+}
+
+.loginBtn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.loginLinks {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #888;
+}
+
+.loginLinks a {
+  color: #888;
+  text-decoration: none;
+  margin: 0 5px;
+}

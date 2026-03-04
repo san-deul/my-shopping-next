@@ -1,0 +1,125 @@
+.joinForm {
+  max-width: 800px;
+  margin: 40px auto;
+  border: 1px solid #eee;
+  background: #fff;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  font-family: 'Pretendard', sans-serif;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.required {
+  color: red;
+  margin-left: 4px;
+}
+
+.inputField {
+  width: 80%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.idCheckWrap {
+  display: flex;
+  gap: 10px;
+}
+
+.addressWrap {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.btnSmall {
+  background: var(--main-color);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.btnSmall:hover {
+  background:  var(--main-hover)
+}
+
+.joinBtnWrap {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.btnCancel,
+.btnSubmit {
+  width: 180px;
+  padding: 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btnCancel {
+  background: #f3f3f3;
+  color: #333;
+}
+
+.btnSubmit {
+  background: var(--main-color);
+  color: #fff;
+}
+
+.btnCancel:hover,
+.btnSubmit:hover {
+  opacity: 0.8;
+}
+
+.point {
+  color: #ff4d4f; 
+}
+
+.pp {
+  color: red;
+  font-size: 12px;
+  text-align: right;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.errorText {
+  color: red;
+  margin-top: 10px;
+  text-indent: 12px;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .joinForm {
+    font-size: 1rem;
+    padding: 15px;
+  }
+  .idCheckWrap {
+    flex-direction: column;
+  }
+  .inputField {
+    width: 100%;
+  }
+}
