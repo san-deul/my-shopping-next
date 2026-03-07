@@ -22,13 +22,14 @@ export default function RootLayout({ children }) {
   const initAuth = useAuthStore((state) => state.initAuth);
 
   useEffect(() => {
-    const subscription = initAuth();
-
-    // cleanup: 구독 해제
-    return () => {
-      subscription.then(sub => sub?.unsubscribe());
-    };
-  }, [initAuth]);
+    const init = async () => {
+      const subscription = await useAuthStore.getState().initAuth();
+      return () => {
+        subscription?.unsubscribe();
+      };
+    }
+    init();
+  }, []);
 
   return (
     <html lang="en">
@@ -36,7 +37,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
-        {children}
+          {children}
         </Providers>
       </body>
     </html>

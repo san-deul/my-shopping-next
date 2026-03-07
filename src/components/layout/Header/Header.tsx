@@ -81,7 +81,7 @@ export default function Header() {
         ...menu,
         children: !user
           ? [
-              { key: "join", label: "회원가입", href: "/join" },
+              { key: "signup", label: "회원가입", href: "/signup" },
               { key: "login", label: "로그인", href: `/login?from=${pathname}` },
             ]
           : [

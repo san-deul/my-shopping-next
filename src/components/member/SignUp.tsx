@@ -98,6 +98,7 @@ export default function SignUp() {
 
       if (authError) throw authError;
       if (!authData.user) throw new Error("인증 계정 생성 실패");
+      
 
       const { error: dbError } = await supabase.from("member").insert({
         id: authData.user.id,
@@ -110,7 +111,7 @@ export default function SignUp() {
         level: 1,
       });
 
-      const newMember = { email: data.email, name: data.name, level: 1 };
+      const newMember = { id: authData.user.id, email: data.email, name: data.name, level: 1 as 1, };
       setAuth(authData.user, newMember);
 
       if (dbError) throw dbError;
