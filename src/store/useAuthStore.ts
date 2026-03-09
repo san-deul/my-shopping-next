@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 import { User } from "@supabase/supabase-js"; // 수파베이스 제공 기본 유저 타입
-import { supabase } from "../lib/supabase";
+import { supabase } from "../lib/client";
 import useCartStore from "./useCartStore";
 import { Member } from "@/types/member";
 import { memberService } from "@/api/services/memberService";

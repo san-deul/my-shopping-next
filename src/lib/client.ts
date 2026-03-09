@@ -1,5 +1,7 @@
 // src/lib/supabase.ts
-import { createClient } from '@supabase/supabase-js';
+// client 용 
+import { createBrowserClient } from "@supabase/ssr";
+
 
 // 1. 환경 변수를 가져오되, TypeScript에게 "이건 무조건 문자열이야"라고 확신을 줍니다.
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
@@ -11,7 +13,7 @@ if (!supabaseUrl || !supabaseAnonKey) {
 }
 
 // 3. 클라이언트 생성
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey);
 
 // 4. 개발 환경 로그 (process.env.NODE_ENV 타입도 자동으로 추론됩니다)
 if (process.env.NODE_ENV === 'development') { 

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { supabase } from "@/lib/supabase";
+import { supabase } from "@/lib/client";
 
 
 // CSS Module import
@@ -42,11 +42,11 @@ export default function SignIn() {
         return;
       }
 
- 
+
       alert(`${authData.user?.email}님, 반갑습니다!`);
-      const redirectTo = searchParams.get("next") || "/";
-      router.push(redirectTo);
-      router.refresh();
+      const redirectTo = searchParams.get("redirect") || "/";
+
+      window.location.href = redirectTo;
     } catch (err) {
       console.error(err);
       alert("로그인 중 서버 오류가 발생했습니다.");
