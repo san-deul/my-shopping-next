@@ -38,7 +38,7 @@ const useAuthStore = create<AuthState>((set, get) => ({
 
     if (currentUser?.email) {
       memberData = await memberService.getMemberByEmail(currentUser.email)
-      //await useCartStore.getState().fetchCart(currentUser.id);
+      await useCartStore.getState().fetchCart(currentUser.id);
     }
 
     set({ user: currentUser, member: memberData, loading: false });
