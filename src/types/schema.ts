@@ -14,8 +14,7 @@ export interface Product {
   rating: number | null; // numeric(2, 1)은 소수점이 있는 number
   reviewCount: number | null;
   stock: number | null;
-  created_at: string | null; // timestamp는 보통 ISO 문자열로 넘어옵니다.
-}
+  created_at: string | null; // timestamp는 보통 ISO 문자열로 넘어옴
 
 // 2. 리뷰 타입 정의
 export interface Review {
